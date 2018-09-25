@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <title>Random Colors Generator</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote {
+  &: before, &:after {
+    content: '';
+  content: none;
+}
+}
+
+q {
+  &: before, &:after {
+    content: '';
+  content: none;
+}
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button, button:focus, button:active, button:hover {
+  outline: none;
+  outline-color: #eee;
+}
+
+input[type="button"] {
+  outline: none;
+}
+
+input[type="button"]::-moz-focus-inner {
+  border: 0;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.buttons {
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+}
+
+.centa {
+  margin: 0 auto;
+  width: 400px;
+  background: #000;
+  min-height: 120px;
+  border: 1px solid #111;
+}
+
+#header {
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  background: #000;
+  height: auto;
+  color: #999;
+  text-align: center;
+  background: rgb(0,0,0);
+  background: radial-gradient(circle, rgb(10,10,10) 28%, rgb(0,0,0) 100%);
+}
+
+#div {
+  border-top: 1px dashed #999;
+  border-bottom: 1px dashed #999;
+}
+
+#div>div {
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: left;
+  line-height: 48px;
+  height: 48px;
+}
+
+#div div span {
+  text-transform: uppercase;
+}
+
+input {
+  width: 50%;
+  display: inline-block;
+  border: #999 solid 1px;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #999;
+  background: #000;
+  font-weight: 900;
+  font-size: 1.25em;
+  line-height: 1.2em;
+  text-align: center;
+}
+
+label {
+  color: #999;
+}
+
+button {
+  background: #000;
+  cursor: pointer;
+  height: 48px;
+  text-transform: uppercase;
+  width: 100%;
+  display: inline-block;
+  border: #999 solid 0.0625em;
+  margin: 0.5em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 900;
+  color: #999;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:first-of-type {
+  margin-bottom: 0;
+}
+
+button:hover {
+  color: #eee;
+  background: #222;
+}
+
+@media all and (max-width:30em) {
+  button {
+    display: block;
+    margin: 0.4em auto;
+  }
+}
+
+@font-face {
+{
+  font-family : myArial;
+src : local("Verdana");
+unicode-range : U+30-39;
+}
+}
+
+@font-face {
+{
+  font-family : myArial;
+src : local("serif");
+unicode-range : U+0-2f, U+0-2f;
+}
+}
+
+html,body {
+  height: 100%;
+}
+
+body {
+  font: 16px/1.5em myArial, sans-serif;
+  color: #000;
+  overflow-x: hidden;
+  background: #000;
+  min-height: 1100px;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 3em;
+  line-height: 1em;
+  font-weight: 900;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(17%, #333333), color-stop(17%, #1f8a62), color-stop(27%, #1f8a62), color-stop(27%, #d6bc69), color-stop(37%, #d6bc69), color-stop(37%, #2e8ad3), color-stop(47%, #2e8ad3), color-stop(47%, #c31939), color-stop(57%, #c31939), color-stop(57%, #eeeeee), color-stop(67%, #eeeeee), color-stop(67%, #999999), color-stop(77%, #999999), color-stop(77%, #555555), color-stop(87%, #555555), color-stop(87%, #222222), to(#222222));
+  background: -webkit-linear-gradient(bottom, #333333 17%, #1f8a62 17%, #1f8a62 27%, #d6bc69 27%, #d6bc69 37%, #2e8ad3 37%, #2e8ad3 47%, #c31939 47%, #c31939 57%, #eeeeee 57%, #eeeeee 67%, #999999 67%, #999999 77%, #555555 77%, #555555 87%, #222222 87%, #222222 100%);
+  background: -o-linear-gradient(bottom, #333333 17%, #1f8a62 17%, #1f8a62 27%, #d6bc69 27%, #d6bc69 37%, #2e8ad3 37%, #2e8ad3 47%, #c31939 47%, #c31939 57%, #eeeeee 57%, #eeeeee 67%, #999999 67%, #999999 77%, #555555 77%, #555555 87%, #222222 87%, #222222 100%);
+  background: linear-gradient(0deg, #333333 17%, #1f8a62 17%, #1f8a62 27%, #d6bc69 27%, #d6bc69 37%, #2e8ad3 37%, #2e8ad3 47%, #c31939 47%, #c31939 57%, #eeeeee 57%, #eeeeee 67%, #999999 67%, #999999 77%, #555555 77%, #555555 87%, #222222 87%, #222222 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2,p {
+  font-size: 0.75em;
+  line-height: 2em;
+  color: #999;
+  display: inline-block;
+}
+
+h1:after {
+  content: '\221E';
+}
+
+h1:before {
+  content: '\221E';
+}
+
+footer {
+  text-align: right;
+  width: 100%;
+  height: 120px;
+  color: #555;
+  padding: 24px;
+}
+
+.views {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: #000;
+  border: #999 solid 0.0625em;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  color: #999;
+  text-align: center;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 6px 12px;
+}
+
+.colors {
+  background: #000;
+  border: #999 solid 0.0625em;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  color: #999;
+  text-align: center;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin: 0 6px;
+  padding: 6px 6px;
+  overflow-wrap: break-word;
+  min-width: 40%;
+}
+</style>
+
+</head>
+
+<body id="bod">
+    <header id="header">
+        <div class="centa">
+            <h2>Generate color palettes online</h2>
+            <h1>colors</h1>
+            <div class="buttons">
+                <label for="inputColor">RGB</label>
+                <label for="inter">interval</label>
+                <input type="number" min="2" max="80" value="20" id="inter" style="width: 2em;">
+                <input type="text" size="16" maxlength="16" placeholder="rgb(0,0,0)" value="0,0,0" id="inputColor">
+                <button id="buttonMycolors">From My color</button>
+                <button id="buttonMagic">Random color</button>
+            </div>
+        </div>
+    </header>
+    <div id="div"></div>
+    <footer>by Kostas Šliažas</footer>
+
+    <script>
+        "use strict";
+        var e = document.getElementById("div");
+        var num = document.getElementById('inter');
+        /*Make rgb color string*/
+        const rgbMake = function(R = 0, G = 0, B = 0) {
+            let colors = `rgb(${(R<=255)?R:0},${(G<=255)?G:0},${(B<=255)?B:0})`;
+            return colors;
+        }
+
+        /*Create elements in div*/
+        function createDivs() {
+            e.innerHTML = "";
+            for (let i = 0; i < 10; i++) {
+                let rgb = rgbMake(randomNum(0, 200), randomNum(0, 155), randomNum(0, 155));
+                e.innerHTML += "<div style=\"background:" + rgb + "\"><div class=\"buttons\"><span class=\"views\"> view </span><span class=\"colors\">" + rgb + "</span></div></div>";
+            }
+        }
+
+        const getMyColor = function() {
+            let getColor = document.getElementById('inputColor').value;
+            let numbers = getColor.match(/\d+/g).map(Number);
+            return numbers;
+        }
+
+        const mixColor = function() {
+            let inter = document.getElementById('inter').value;
+            e.innerHTML = "";
+            let mx = getMyColor();
+            let c = 0;
+            let r = mx[0];
+            let g = mx[1];
+            let b = mx[2];
+
+            for (let i = 0; i < 50; i++) {
+                c = 0;
+                if (r > 255 || g > 255 || b > 255) break;
+                let mixColor = rgbMake(Math.abs(r), Math.abs(g), Math.abs(b));
+                let hex = rgbToHex(r, g, b);
+                e.innerHTML += "<div style=\"background:" + mixColor + "\"><div class=\"buttons\"><p class=\"colors\">" + hex + " </p><p class=\"colors\">" + mixColor + "</p></div></div>";
+                c += Number(inter) || 10;
+                r += c + 25;
+                g += c;
+                b += c;
+            }
+        }
+
+        function rgbToHex(r, g, b) {
+            return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+        }
+
+        /* Random func */
+        function randomNum(min = 0, max = 0) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        document.getElementById('buttonMagic').addEventListener("click", function() {
+            createDivs();
+            divs();
+        }, false);
+
+        document.getElementById('buttonMycolors').addEventListener("click", function() {
+            getMyColor();
+            mixColor();
+        }, false);
+        createDivs();
+
+        function divs() {
+            for (let i = 0; i < e.childNodes.length; i++) {
+                let elem = e.getElementsByClassName('views');
+                elem[i].addEventListener('click', function() {
+                    document.getElementById('inputColor').value = this.parentElement.innerText.substr(this.parentElement.innerText.indexOf(" ") + 1);
+                    getMyColor();
+                    mixColor();
+                }, false);
+            }
+        }
+        num.value = localStorage.number || 10;
+        num.onkeyup = function() {
+            var number = this.value;
+            localStorage.setItem('number', number);
+        };
+        divs();
+    </script>
+</body>
+</html>
